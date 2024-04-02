@@ -21,8 +21,8 @@ public class UserRegistrationService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) {
 		
-		if (StringUtils.equalsIgnoreCase(username, "user")) {
-			return new org.springframework.security.core.userdetails.User("user", "$2a$10$unalHkW6FEawIVOx.EjBP..IYtSpbexDxOzNRnW1BOYJxSG2At8Yi", Collections.emptyList());
+		if (StringUtils.equalsIgnoreCase(username, "john.doe@gmail.com")) {
+			return new org.springframework.security.core.userdetails.User("John Doe", "$2a$10$unalHkW6FEawIVOx.EjBP..IYtSpbexDxOzNRnW1BOYJxSG2At8Yi", Collections.emptyList());
 		} else {
 		
 			User user = userDAO.findByUsername(username)

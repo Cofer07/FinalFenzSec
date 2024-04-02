@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
     <head>
-        <title>Spring Security Example </title>
-    </head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Welcome</title>
+		<link rel="stylesheet" href="stylesheet.css">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+	</head>
     <body>
-        <div th:if="${param.error}">
-            Invalid username and password.
-        </div>
-        <div th:if="${param.logout}">
-            You have been logged out.
-        </div>
-        <form th:action="@{/login}" method="post">
-            <div><label> User Name : <input type="text" name="username"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" value="Sign In"/></div>
-        </form>
+		<div class="split left">
+			<div class="form-container">
+				<img src="logo.png" alt="Fenz Logo" class="logo">
+				<div th:if="${param.error}">
+					Invalid username and password.
+				</div>
+				<div th:if="${param.logout}">
+					You have been logged out.
+				</div>
+				<form th:action="@{/login}" method="post">
+					<input type="email" placeholder="Email" name="username" required>
+					<input type="password" placeholder="Password" name="password" required>
+					<button type="submit"><i class="fa fa-user-plus"></i> Sign In</button>
+				</form>
+				<a href="" class="forgot-password">Forgot my password?</a>
+			</div>
+		</div>
+		<div class="split right">
+			<div class="centered">
+				<h1>Hello, Fencer Friend!</h1>
+				<p>Enter your personal details and start your journey with us</p>
+<!-- 				<p><a th:href="@{/hello}"><i class="fa fa-sign-in-alt"></i>Sign Up</a></p> -->
+				<button type="button" th:onClick="|window.location.href='@{/home}'|"><i class="fa fa-sign-in-alt"></i> Sign Up</button>
+			</div>
+		</div>
     </body>
 </html>
