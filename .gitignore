@@ -1,1 +1,4 @@
 fenzapp-web/target/
+fenzapp-web/.classpath
+fenzapp-web/.project
+fenzapp-web/.settings/
