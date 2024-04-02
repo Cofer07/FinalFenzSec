@@ -1,76 +1,60 @@
 package com.fencingstats.fenzapp.model;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "online_user")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private long userid;
 
-    @Column(unique = true, nullable = false, length = 20)
-    private String username;
+    private String name;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length=64)
     private String password;
 
-    @Column(unique = true, nullable = false)
+    @Column(name= "first_name", nullable = false, length = 20)
+    private String fname;
+
+    @Column(name="last_name", nullable= false, length=20)
+    private String lname;
+
+    @Column(nullable = false, unique = true, length= 45)
     private String email;
 
-    private String role;
+    @Column(nullable = true, unique = false, length=15)
+    private String phoneNum;
 
-    @Column(nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+    @Column(nullable = true, unique = false, length=150)
+    private String address;
 
-    @Column(nullable = false)
-    private LocalDateTime updatedAt;
+    @Column(nullable = true, unique = false, length=9)
+    private int SIN;
 
-    public User(Long id, String username, String password, String email, String role) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.role = role;
+    public String getAddress() {
+        return address;
     }
 
-    public User() {
+    public void setAddress(String address){
+        this.address = address;
     }
 
-    @PrePersist
-    private void onCreate() {
-        createdAt = LocalDateTime.now();
+    public long getUserid() {
+        return userid;
     }
 
-    @PreUpdate
-    private void onUpdate() {
-        updatedAt = LocalDateTime.now();
+    public void setUserid(Integer id) {
+        this.userid = id;
     }
 
-    public Long getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -81,16 +65,43 @@ public class User {
         this.email = email;
     }
 
-    public String getRole() {
-        return role;
+    public String getPassword(){
+        return password;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public enum Role {
-        USER, ADMIN
+    public String getFname() {
+        return fname;
     }
 
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public int getSIN() {
+        return SIN;
+    }
+
+    public void setSIN(int SIN) {
+        this.SIN = SIN;
+    }
 }
