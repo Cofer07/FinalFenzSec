@@ -1,141 +1,142 @@
 /* General styles */
 body, html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
+	height: 100%;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .full-background {
-    background-color: #032880;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+	background-color: #032880;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
 }
-
 
 .form-box {
-    background: #eeeeee;
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
+	background: #eeeeee;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 500px;
+	text-align: center;
 }
-
 
 .logo-signup {
-    max-width: 200px;
-    margin-bottom: 20px;
+	max-width: 200px;
+	margin-bottom: 20px;
 }
 
-
-input[type=text],
-input[type=email],
-input[type=password] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+input[type=text], input[type=email], input[type=password] {
+	width: calc(100% - 20px);
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 
 button {
-    background-color: #eaca0d;
-    color: #032880;
-    padding: 15px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 18px;
-    display: block;
-    width: 100%;
-    box-shadow: none;
+	background-color: #eaca0d;
+	color: #032880;
+	padding: 15px 20px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 18px;
+	display: block;
+	width: 100%;
+	box-shadow: none;
 }
 
 button:hover {
-    background-color: #d1b108;
+	background-color: #d1b108;
 }
 
-
 .split {
-    width: 50%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	width: 50%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .left {
-    left: 0;
-    background-color: #cdcfdf;
-    justify-content: center;
+	left: 0;
+	background-color: #cdcfdf;
+	justify-content: center;
 }
 
 .right {
-    right: 0;
-    background-color: #032880;
-    color: #eaca0d;
-    flex-direction: column;
-    justify-content: center;
+	right: 0;
+	background-color: #032880;
+	color: #eaca0d;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .right button {
-    max-width: 400px;
-    margin: 10px auto;
-    display: block;
+	max-width: 400px;
+	margin: 10px auto;
+	display: block;
 }
 
 .centered, .form-container {
-    text-align: center;
-    width: 100%;
+	text-align: center;
+	width: 100%;
 }
 
-
 .form-container {
-    background: #eeeeee;
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    max-width: 500px;
-    text-align: center;
-    justify-content: center;
-
+	background: #eeeeee;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	max-width: 500px;
+	text-align: center;
+	justify-content: center;
 }
 
 .logo {
-    margin-top: -20px;
-    max-width: 300px;
-    margin-bottom: -50px;
+	margin-top: -20px;
+	max-width: 300px;
+	margin-bottom: -50px;
 }
 
 .form-container button {
-    background-color: #eaca0d;
-    color: #032880;
-    padding: 15px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 18px;
-    display: block;
-    max-width: 200px;
-    margin: 10px auto;
-    font-weight: 600;
+	background-color: #eaca0d;
+	color: #032880;
+	padding: 15px 20px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 18px;
+	display: block;
+	max-width: 200px;
+	margin: 10px auto;
+	font-weight: 600;
 }
 
 .forgot-password {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-    color: #032880;
-    text-decoration: underline;
+	display: block;
+	margin-top: 10px;
+	text-align: center;
+	color: #032880;
+	text-decoration: underline;
 }
 
 .forgot-password:hover {
-    text-decoration: none;
-    color: #eaca0d;
+	text-decoration: none;
+	color: #eaca0d;
 }
 
+.alert-danger {
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	color: #a94442;
+}
+
+.validation-error {
+	color: #a94442;
+}
