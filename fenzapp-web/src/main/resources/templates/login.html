@@ -23,14 +23,13 @@
 					<input type="password" placeholder="Password" name="password" required>
 					<button type="submit"><i class="fa fa-user-plus"></i> Sign In</button>
 				</form>
-				<a href="" class="forgot-password">Forgot my password?</a>
+          		<span><a th:href="@{/forgot-password}">Forgot password?</a></span>
 			</div>
 		</div>
 		<div class="split right">
 			<div class="centered">
 				<h1>Hello, Fencer Friend!</h1>
 				<p>Enter your personal details and start your journey with us</p>
-<!-- 				<p><a th:href="@{/hello}"><i class="fa fa-sign-in-alt"></i>Sign Up</a></p> -->
 				<button type="button" th:onClick="|window.location.href='@{/signup}'|"><i class="fa fa-sign-in-alt"></i> Sign Up</button>
 			</div>
 		</div>
