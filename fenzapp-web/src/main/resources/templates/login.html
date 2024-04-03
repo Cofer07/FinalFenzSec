@@ -12,7 +12,7 @@
 		<div class="split left">
 			<div class="form-container">
 				<img src="logo.png" alt="Fenz Logo" class="logo">
-				<div th:if="${param.error}">
+				<div th:if="${param.error}" class="validation-error">
 					Invalid username and password.
 				</div>
 				<div th:if="${param.logout}">
