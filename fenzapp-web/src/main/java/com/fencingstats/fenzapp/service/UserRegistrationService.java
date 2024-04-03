@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ public class UserRegistrationService implements UserDetailsService {
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
-
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) {
 		
@@ -30,7 +31,7 @@ public class UserRegistrationService implements UserDetailsService {
 			return new org.springframework.security.core.userdetails.User("John Doe", "$2a$10$unalHkW6FEawIVOx.EjBP..IYtSpbexDxOzNRnW1BOYJxSG2At8Yi", Collections.emptyList());
 		} else {
 		
-			User user = userDAO.findByUsername(username)
+			User user = userDAO.findByEmail(username)
 		            .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
 			return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), Collections.emptyList());
 		}

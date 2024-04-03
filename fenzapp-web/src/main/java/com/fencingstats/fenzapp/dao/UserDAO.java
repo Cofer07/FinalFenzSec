@@ -10,7 +10,5 @@ import com.fencingstats.fenzapp.model.User;
 @Repository
 public interface UserDAO extends JpaRepository<User, Integer> {
 
-	Optional<User> findByUsername(String username);
-	
 	Optional<User> findByEmail(String email);
 }
