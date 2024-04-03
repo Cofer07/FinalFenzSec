@@ -24,7 +24,7 @@ public class UserRegistrationDto {
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$",
             message = "Password must contain one digit, one lowercase letter, one uppercase letter, and one special character")
     private String password;
-
+    
     public String getFname() {
         return fname;
     }
@@ -56,4 +56,5 @@ public class UserRegistrationDto {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

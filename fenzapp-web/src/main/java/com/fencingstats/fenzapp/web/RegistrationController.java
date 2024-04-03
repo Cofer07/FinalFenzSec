@@ -26,18 +26,17 @@ public class RegistrationController {
 
     @PostMapping("/register")
     public String processRegister(@Valid UserRegistrationDto userRegistrationDto, BindingResult result, Model model) {
-        if (result.hasErrors()){
-            model.addAttribute("UserRegistrationDto", userRegistrationDto);
+    	if (result.hasErrors()){
             return "signup_form";
         }
         try {
             userService.registerNewUser(userRegistrationDto);
         } catch (DuplicateUserException e) {
-            model.addAttribute("UserRegistrationDto", userRegistrationDto);
             model.addAttribute("error", e.getMessage());
             return "signup_form";
         }
-        return "register_success";
+        model.addAttribute("registrationStatus", true);
+        return "signup_form";
     }
 	
 }
