@@ -1,13 +1,43 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
-    <head>
-        <title>Fenzapp - Contact us</title>
-    </head>
-    <body>
-        <h1 th:inline="text">Hello <span th:remove="tag" sec:authentication="name">thymeleaf</span>!</h1>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Fenz</title>
+    <link rel="stylesheet" href="stylesheet2.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <img src="logo2.png" alt="Fenz Logo" class="logo-header">
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Sign Out</button>
+    </form>
+</header>
+<main>
+    <div class="contact-form-container">
+        <h2>Contact Us</h2>
+        <form id="contactForm" th:action="@{/contactus}" th:object="${contactMessage}" method="post">
+            <div th:if="${#fields.hasGlobalErrors()}">
+                <p class="validation-error" th:each="error : ${#fields.globalErrors()}" th:text="${error}"></p>
+            </div>
+            <div>
+                <input type="email" class="email-field" th:field="*{email}" placeholder="Your Email" required>
+            </div>
+            <div>
+                <textarea class ="message-box" th:field="*{message}" placeholder="Your Message" required></textarea>
+            </div>
+            <div th:if="${error}" class="alert alert-danger" role="alert">
+                <p>Could not submit message: <span th:text="${error}"></span></p>
+            </div>
+            <button type="submit">Send Message</button>
         </form>
-    </body>
+    </div>
+</main>
+<script th:if="${success}">
+    alert('Message Sent Successfully');
+</script>
+</body>
 </html>

@@ -1,0 +1,124 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #f4f4f4;
+}
+
+header {
+    padding: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-header {
+    height: 100px; /* Increase the height */
+    width: auto; /* Maintain the aspect ratio */
+    margin-left: 20px;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+}
+
+.logo {
+    margin-top: -20px;
+    max-width: 300px;
+    margin-bottom: -50px;
+}
+
+.contact-form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.contact-form-container h2 {
+    color: #032880;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form-container button {
+    padding: 10px;
+    background-color: #032880;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form-container button:hover {
+    background-color: #eaca0d;
+}
+
+button {
+    background-color: #eaca0d;
+    color: #032880;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    box-shadow: none;
+}
+
+button:hover {
+    background-color: #d1b108;
+}
+
+.email-field {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #032880;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.message-box {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #032880;
+    border-radius: 10px;
+    height: 150px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+
+.alert-danger {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+}
+
+.validation-error {
+    color: #a94442;
+}
